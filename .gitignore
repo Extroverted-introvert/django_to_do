@@ -7,7 +7,7 @@ __pycache__/
 todo-venv/
 
 # Ignore the "db.sqlite3" database file (use your actual database name if different)
-db.sqlite3
+# db.sqlite3
 
 # Ignore sensitive environment variables or secret files (e.g., .env, .env.local)
 .env*
