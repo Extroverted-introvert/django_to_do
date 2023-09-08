@@ -39,7 +39,7 @@ __pycache__/
 __pycache__/
 */__pycache__/
 *.db
-*.sqlite3
+# *.sqlite3
 
 # Ignore migration files (adjust to your project's migrations directory structure)
 **/migrations/
