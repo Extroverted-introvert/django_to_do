@@ -1,0 +1,1 @@
+Use the command: python manage.py findstatic --verbosity 2 <filename> to debug static file fetch path
