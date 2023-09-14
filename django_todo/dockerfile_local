@@ -1,0 +1,23 @@
+FROM python:3.10-buster
+
+ENV ENV local 
+
+RUN mkdir -p /home/ubuntu/todo_app
+
+# setup the project
+WORKDIR /home/ubuntu/todo_app
+ADD ./requirements.txt /home/ubuntu/todo_app/requirements.txt
+RUN pip3 install -r requirements.txt
+
+COPY . /home/ubuntu/todo_app/
+
+#making migrations to the db
+RUN python /home/ubuntu/todo_app/manage.py makemigrations
+RUN python /home/ubuntu/todo_app/manage.py migrate
+RUN python /home/ubuntu/todo_app/manage.py collectstatic --no-input
+
+# expose the port 8086
+EXPOSE 8086
+
+# define the default command to run when starting the container
+CMD ["gunicorn", "--bind", ":8086", "--timeout", "3600", "todo_app.wsgi:application"]

@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-g=nhnoou+6cm9v6kkg4=#%%8otx^f##aaj+ec!x!(t4a8qgc@3
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ['http://18.181.172.89']
+CSRF_TRUSTED_ORIGINS = ["http://18.181.172.89"]
 CSRF_COOKIE_SECURE = None
 # Application definition
 
@@ -118,7 +118,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "/static/"
-STATIC_ROOT = ""
+STATIC_ROOT = "/"
 STATICFILES_DIRS = ("static",)
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

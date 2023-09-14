@@ -1,0 +1,22 @@
+version: '3.9'
+#Since local deployment, nginx config not required
+services:
+  app:
+    build: 
+      context: django_todo
+      dockerfile: dockerfile_local
+    ports:
+      - "8086:8086"
+    container_name: todo_app
+    restart: always
+    volumes:
+      - .:/home/ubuntu/django_todo
+  nginx:
+    build:
+      context: nginx
+      dockerfile: dockerfile
+    ports:
+      - 80:80
+    restart: always
+    links:
+      - app
